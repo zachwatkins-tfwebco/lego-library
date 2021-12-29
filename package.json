@@ -1,0 +1,23 @@
+{
+  "name": "lego-library",
+  "version": "0.1.0",
+  "description": "A way to display lego kits you own and their status.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZachWatkins/lego-library.git"
+  },
+  "keywords": [
+    "lego",
+    "js"
+  ],
+  "author": "Zachary Kendall Watkins <watkinza@gmail.com>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/ZachWatkins/lego-library/issues"
+  },
+  "homepage": "https://github.com/ZachWatkins/lego-library#readme"
+}
