@@ -1,32 +1,70 @@
 {
   "name": "lego-library",
   "version": "0.1.0",
+  "private": true,
   "description": "A way to display lego kits you own and their status.",
-  "main": "index.js",
+  "author": {
+    "name": "Zachary Kendall Watkins",
+    "email": "watkinza@gmail.com"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build-dev": "vue-cli-service build --mode=development --modern",
+    "build-prod": "vue-cli-service build --mode=production --modern",
+    "start": "npm install && npm run serve"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ZachWatkins/lego-library.git"
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "core-js": "^3.6.5",
+    "node-sass": "^7.0.1",
+    "vue": "^3.0.0",
+    "vue-router": "^3.5.3"
   },
-  "keywords": [
-    "lego",
-    "js"
+  "devDependencies": {
+    "@vue/cli": "^4.5.15",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
   ],
-  "author": "Zachary Kendall Watkins <watkinza@gmail.com>",
-  "license": "Unlicense",
+  "_id": "lego-library@0.1.0",
   "bugs": {
     "url": "https://github.com/ZachWatkins/lego-library/issues"
   },
   "homepage": "https://github.com/ZachWatkins/lego-library#readme",
-  "dependencies": {
-    "bootstrap": "^5.1.3",
-    "node-sass": "^7.0.1",
-    "vue": "^2.6.14",
-    "vue-router": "^3.5.3"
-  },
-  "devDependencies": {
-    "@vue/cli-service": "^4.5.15"
+  "keywords": [
+    "lego",
+    "js"
+  ],
+  "license": "Unlicense",
+  "readme": "https://raw.githubusercontent.com/ZachWatkins/lego-library/main/README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZachWatkins/lego-library.git"
   }
 }
