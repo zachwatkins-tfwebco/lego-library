@@ -1,10 +1,10 @@
 [{
-    "name":"Thor Mech Armor",
-    "id":"76169"
+    "id": 76169,
+    "name": "Thor Mech Armor"
 },{
-    "name":"Miles Morales Mech Armor",
-    "id":"76171"
+    "id": 76171,
+    "name": "Miles Morales Mech Armor"
 },{
-    "name":"Captain America Mech Armor",
-    "id":"76168"
+    "id": 76168,
+    "name": "Captain America Mech Armor"
 }]
