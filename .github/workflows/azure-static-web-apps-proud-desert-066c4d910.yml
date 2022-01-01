@@ -36,6 +36,12 @@ jobs:
           app_build_command: "npm run build"
           app_artifact_location: "../dist"
           ###### End of Repository/Build Configurations ######
+        env:
+          ORYX_DISABLE_TELEMETRY: true
+          ORYX_APP_TYPE: "webapps"
+          PLATFORM_NAME: "nodejs"
+          PLATFORM_VERSION: "16.10.0"
+          NODE_VERSION: "16.10.0"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
