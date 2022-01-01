@@ -13,8 +13,6 @@ env:
   ORYX_DISABLE_TELEMETRY: true
   ORYX_APP_TYPE: "webapps"
   PLATFORM_NAME: "nodejs"
-  PLATFORM_VERSION: "16.10.0"
-  NODE_VERSION: "16.10.0"
   NODE_ENV: "production"
 
 jobs:
@@ -26,7 +24,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v1
         with:
