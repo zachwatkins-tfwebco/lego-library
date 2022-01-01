@@ -49,5 +49,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ZachWatkins/lego-library.git"
+  },
+  "engines": {
+    "npm": ">=7.24.0",
+	"node": ">=16.10.0"
   }
 }
