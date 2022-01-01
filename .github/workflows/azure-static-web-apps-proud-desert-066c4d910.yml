@@ -16,6 +16,7 @@ env:
   PLATFORM_VERSION: "16.13.1"
   NODE_VERSION: "16.13.1"
   NODE_ENV: "production"
+  DISABLE_HUGO_BUILD: true
 
 jobs:
   build_and_deploy_job:
