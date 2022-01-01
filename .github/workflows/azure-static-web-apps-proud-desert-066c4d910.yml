@@ -31,11 +31,11 @@ jobs:
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: 15.x
       - name: Install dependencies and build
         id: installandbuild
         run: |
-          npm install --production=false
+          npm ci --production=false
           npm run build
       - name: Build And Deploy
         id: builddeploy
