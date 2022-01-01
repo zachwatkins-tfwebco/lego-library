@@ -2,7 +2,7 @@
 const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   module: {
     rules: [
       {
@@ -25,9 +25,6 @@ module.exports = {
         ]
       }
     ]
-  },
-  output: {
-	  path: 'public'
   },
   plugins: [
     // make sure to include the plugin for the magic
