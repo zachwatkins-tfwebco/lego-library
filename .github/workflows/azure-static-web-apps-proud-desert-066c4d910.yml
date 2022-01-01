@@ -36,6 +36,7 @@ jobs:
         id: installandbuild
         run: |
           npm install
+          npm install -g @vue/cli-service
           npm run build
       - name: Build And Deploy
         id: builddeploy
