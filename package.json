@@ -13,7 +13,7 @@
     "lint": "vue-cli-service lint",
     "start": "npm install && npm run build"
   },
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.12",
