@@ -1,0 +1,1 @@
+// Allow Microsoft Oryx to detect this application as NodeJS. 
