@@ -35,8 +35,7 @@ jobs:
       - name: Install dependencies and build
         id: installandbuild
         run: |
-          npm install
-          npm install -g @vue/cli-service
+          npm install --production=false
           npm run build
       - name: Build And Deploy
         id: builddeploy
