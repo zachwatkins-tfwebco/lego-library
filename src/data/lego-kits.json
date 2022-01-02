@@ -1,10 +1,22 @@
-[{
-    "id": 76169,
-    "name": "Thor Mech Armor"
-},{
-    "id": 76171,
-    "name": "Miles Morales Mech Armor"
-},{
-    "id": 76168,
-    "name": "Captain America Mech Armor"
-}]
+[{"id": 76169, "name": "Thor Mech Armor"},
+{"id": 76171, "name": "Miles Morales Mech Armor"},
+{"id": 76168, "name": "Captain America Mech Armor"},
+{"id": 10708, "name": "Unknown"},
+{"id": 10766, "name": "Unknown"},
+{"id": 76146, "name": "Unknown"},
+{"id": 854037, "name": "Unknown"},
+{"id": 10706, "name": "Unknown"},
+{"id": 41169, "name": "Unknown"},
+{"id": 854038, "name": "Unknown"},
+{"id": 30386, "name": "Unknown"},
+{"id": 30535, "name": "Unknown"},
+{"id": 11001, "name": "Unknown"},
+{"id": 21162, "name": "Unknown"},
+{"id": 70400, "name": "Unknown"},
+{"id": 76141, "name": "Unknown"},
+{"id": 42118, "name": "Unknown"},
+{"id": 75283, "name": "Unknown"},
+{"id": 76174, "name": "Unknown"},
+{"id": 76201, "name": "Unknown"},
+{"id": 76140, "name": "Unknown"},
+{"id": 76170, "name": "Iron Man vs. Thanos"}]
