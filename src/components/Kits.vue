@@ -2,43 +2,60 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      Check out the lego kits we've finished!
+      Search our Lego kits by ID or name.
     </p>
     <form id="lego_kit_search_form" @submit="onSubmit">
-      <input name="search" id="search" type="search" list="lego-kit-data" /> <input type="submit" value="Search our Lego kits" v-on:click="onSubmit" />
-      <div id="results"></div>
+      <input name="search" id="search" type="search" list="lego-kit-data" /> <input type="submit" value="Search Kits" v-on:click="onSubmit" />
+      <div id="results"><Result /></div>
       <datalist id="lego-kit-data">
         <option v-for="item in items" :key="item.id" v-bind:value="item.id" />
         <option v-for="item in items" :key="item.name" v-bind:value="item.name" />
       </datalist>
     </form>
-    <h3>All Kits</h3>
-    <ul id="kit-list">
-      <li v-for="item in items" :key="item.id" v-bind:id="'kit_' + item.id" v-bind:data-name="item.name"><span class="mono">#{{ item.id }}</span> {{ item.name }}</li>
-    </ul>
   </div>
 </template>
 
 <script>
+// import Vue from 'vue'
 import legoKits from '../data/lego-kits.json'
+import Result from './Result.vue'
 
 function searchKits (event) {
   event.preventDefault()
-  const form = document.querySelector('#lego_kit_search_form')
-  const value = form.querySelector('#search').value.trim()
-  let kits = document.querySelectorAll('#kit_' + value)
-  if (parseInt(value).toString() !== value) {
-    // It might be that they typed in part or all of the kit name.
-    kits = document.querySelectorAll('li[data-name*="' + value + '"]')
+  const $form = document.querySelector('#lego_kit_search_form')
+  const $results = document.querySelector('#results')
+  const value = $form.querySelector('#search').value.trim()
+  const key = parseInt(value).toString() === value ? 'id' : 'name'
+  const results = []
+  // Find which kits are being looked for.
+  legoKits.forEach(element => {
+    let searchedValue = element[key]
+    if (typeof element[key] === 'number') {
+      searchedValue = searchedValue.toString()
+    }
+    if (searchedValue.indexOf(value) >= 0) {
+      results.push(element)
+    }
+  })
+  Result.render({ el: '#results' }) // eslint-disable-line no-new
+  // Build the search results output.
+  $results.innerHTML = ''
+  if (results.length > 0) {
+    const plural = results.length > 1 ? 's' : ''
+    const headline = 'Found ' + results.length + ' result' + plural + ':<br />'
+    $results.innerHTML += headline
   }
-  document.querySelector('#results').innerHTML = ''
-  kits.forEach(element => {
-    var el = document.createElement('div')
-    el.innerHTML = element.innerHTML
-    document.querySelector('#results').appendChild(el)
+  results.forEach(element => {
+    // var el = document.createElement('div')
+    console.log(Result)
+    // el.innerHTML = element.innerHTML
+    // $results.appendChild(el)
   })
 }
 export default {
+  components: {
+    Result
+  },
   name: 'Kits',
   props: {
     msg: String
@@ -68,9 +85,16 @@ h3 {
 #kit-list {
   max-width: 400px;
   margin: 10px auto;
+  border: 1px solid #000;
+  padding: 10px;
 }
 ul {
   text-align: left;
+  margin-left: 0;
+  padding-left: 0;
+}
+li {
+  list-style-type: none;
 }
 a {
   color: #42b983;

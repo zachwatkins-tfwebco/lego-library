@@ -1,18 +1,18 @@
 <template>
-  <div class="home">
+  <div class="about">
     <img alt="Vue logo" src="../assets/logo.png">
-    <Kits msg="Welcome to the Lego Kit Library" />
+    <KitList msg="All Kits In Our Collection"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Kits from '@/components/Kits.vue'
+import KitList from '@/components/KitList.vue'
 
 export default {
-  name: 'Home',
+  name: 'List',
   components: {
-    Kits
+    KitList
   }
 }
 </script>
