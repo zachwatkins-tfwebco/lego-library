@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <ul id="kit-list">
-      <li v-for="item in items" :key="item.id" v-bind:id="'kit_' + item.id" v-bind:data-name="item.name"><span class="mono">#{{ item.id }}</span> {{ item.name }}</li>
+      <li v-for="item in items" :key="item.id" v-bind:id="'kit_' + item.id" v-bind:data-name="item.name"><span class="mono kit-id">#{{ item.id }}</span> <span class="kit-name">{{ item.name }}</span></li>
     </ul>
   </div>
 </template>
@@ -36,11 +36,13 @@ h3 {
   padding: 10px;
 }
 ul {
+  display: table;
   text-align: left;
   margin-left: 0;
   padding-left: 0;
 }
 li {
+  display: table-row;
   list-style-type: none;
 }
 a {
@@ -50,5 +52,12 @@ a {
   font-family: monospace;
   font-size: 16px;
   font-weight: bold;
+}
+.kit-id {
+  display: table-cell;
+  min-width: 80px;
+}
+.kit-name {
+  display: table-cell;
 }
 </style>
