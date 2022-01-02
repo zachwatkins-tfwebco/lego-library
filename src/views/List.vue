@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <img alt="Vue logo" src="../assets/Lego_logo_PNG2.png">
     <KitList msg="All Kits In Our Collection"/>
   </div>
 </template>

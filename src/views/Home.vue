@@ -1,18 +1,18 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <Kits msg="Welcome to the Lego Kit Library" />
+    <img alt="Vue logo" src="../assets/Lego_logo_PNG2.png">
+    <Search msg="Welcome To The Lego Kit Library" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Kits from '@/components/Kits.vue'
+import Search from '@/components/Search.vue'
 
 export default {
   name: 'Home',
   components: {
-    Kits
+    Search
   }
 }
 </script>
