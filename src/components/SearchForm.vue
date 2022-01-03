@@ -7,9 +7,9 @@
         list="lego-kit-data"
         @keydown.enter="searchKits"
       />
-      <datalist id="lego-kit-data" v-if="kits.length">
-        <option v-for="kit in kits" :key="kit.id" v-bind:value="kit.id" />
-        <option v-for="kit in kits" :key="kit.name" v-bind:value="kit.name" />
+      <datalist id="lego-kit-data" v-if="$options.legoJson.length">
+        <option v-for="kit in $options.legoJson" :key="kit.id" v-bind:value="kit.id" />
+        <option v-for="kit in $options.legoJson" :key="kit.name" v-bind:value="kit.name" />
       </datalist>
     </form>
     <ul id="results" v-if="results.length">
@@ -31,6 +31,7 @@ import BaseInputText from './BaseInputText.vue'
 import SearchResult from './SearchResult.vue'
 
 export default {
+  legoJson: legoKits,
   components: {
     BaseInputText,
     SearchResult
@@ -51,7 +52,7 @@ export default {
         const key = parseInt(value).toString() === value ? 'id' : 'name'
         // Find which kits are being looked for.
         // Replace the viewed results array with the found results.
-        this.results = this.kits.filter(function (item) {
+        this.results = this.$options.legoJson.filter(function (item) {
           let searchedValue = item[key]
           if (typeof item[key] === 'number') {
             searchedValue = searchedValue.toString()

@@ -1,5 +1,5 @@
 <template>
-  <input id="search" type="search" name="search" :value="value" v-on="listeners" />
+  <input id="search" type="text" name="search" :value="value" v-on="listeners" />
 </template>
 
 <script>
@@ -27,6 +27,6 @@ export default {
 input[type="search"] {
   padding: 8px 10px;
   border: 2px solid #000;
-  text-align: center;
+  text-align: left;
 }
 </style>
