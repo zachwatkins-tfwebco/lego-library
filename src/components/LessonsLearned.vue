@@ -14,7 +14,7 @@
       <li><a href="https://vuejs.org/v2/guide/single-file-components.html">Single file components</a></li>
       <li><a href="https://vuejs.org/v2/guide/components-custom-events.html">Custom event handlers</a></li>
       <li><a href="https://stackoverflow.com/questions/45565349/how-to-access-external-json-file-objects-in-vue-js-app">File reading for better performance</a></li>
-      <li><a href="https://vuejs.org/v2/guide/forms.html">Form input bindings</a></li>
+      <li><a href="https://vuejs.org/v2/guide/forms.html">Form input bindings</a> allow the search form to attach one function to multiple elements while it references the text input element's value as an object property of the SearchForm component.</li>
       <li><a href="https://vuejs.org/v2/guide/list.html">List Rendering (apply template to array)</a></li>
       <li><a href="https://vuejs.org/v2/guide/list.html#Replacing-an-Array">Array Change Detection (mutation methods)</a></li>
       <li><a href="https://cli.vuejs.org/guide/css.html#pre-processors">CSS Pre-Processors</a> being compiled in single file components</li>
