@@ -101,8 +101,10 @@ export default {
     text-align: center;
     padding: 12px;
     box-sizing: border-box;
+    color: #FFF;
     background: rgba(0, 0, 0, 0.85);
-    border: 2px solid #FFF;
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
   }
 }
 </style>
