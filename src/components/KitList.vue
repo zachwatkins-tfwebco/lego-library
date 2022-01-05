@@ -2,18 +2,26 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <ul id="kit-list">
-      <li v-for="item in items" :key="item.id" v-bind:id="'kit_' + item.id" v-bind:data-name="item.name"><span class="mono kit-id">#{{ item.id }}</span> <span class="kit-name">{{ item.name }}</span></li>
+      <KitListing
+        v-for="item in items"
+        :key="item.id"
+        :listing="item"
+      />
     </ul>
   </div>
 </template>
 
 <script>
 import legoKits from '../data/lego-kits.json'
+import KitListing from './KitListing.vue'
 
 export default {
   name: 'KitList',
   props: {
     msg: String
+  },
+  components: {
+    KitListing
   },
   data () {
     return {

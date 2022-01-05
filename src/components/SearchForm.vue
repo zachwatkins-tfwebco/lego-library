@@ -16,10 +16,10 @@
       </datalist>
     </form>
     <ul id="results" v-if="results.length">
-      <SearchResult
+      <KitListing
         v-for="result in results"
         :key="result.id"
-        :result="result"
+        :listing="result"
       />
     </ul>
     <p v-else>
@@ -32,12 +32,14 @@
 import legoKits from '../data/lego-kits.json'
 import BaseInputText from './BaseInputText.vue'
 import SearchResult from './SearchResult.vue'
+import KitListing from './KitListing.vue'
 
 export default {
   legoJson: legoKits,
   components: {
     BaseInputText,
     SearchResult
+    KitListing
   },
   data () {
     return {
