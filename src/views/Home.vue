@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/Lego_logo_PNG2.png">
-    <Search msg="Welcome To The Lego Kit Library" />
+    <Search msg="Lego Library" />
   </div>
 </template>
 

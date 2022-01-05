@@ -1,5 +1,5 @@
 <template>
-  <input id="search" type="text" name="search" :value="value" v-on="listeners" />
+  <input type="text" name="search" :value="value" v-on="listeners" />
 </template>
 
 <script>

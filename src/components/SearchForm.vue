@@ -3,10 +3,13 @@
     <form id="lego_kit_search_form" @submit="searchKits">
       <BaseInputText
         v-model="newSearchTerms"
+        id="search"
         placeholder="Search our kits"
         list="lego-kit-data"
+        @input="searchKits"
         @keydown.enter="searchKits"
       />
+      <input type="submit" @click="searchKits" value="Search" />
       <datalist id="lego-kit-data" v-if="$options.legoJson.length">
         <option v-for="kit in $options.legoJson" :key="kit.id" v-bind:value="kit.id" />
         <option v-for="kit in $options.legoJson" :key="kit.name" v-bind:value="kit.name" />
@@ -46,6 +49,7 @@ export default {
   methods: {
     searchKits (event) {
       event.preventDefault()
+      window.alert('yes')
       const trimmedText = this.newSearchTerms.trim()
       if (trimmedText) {
         const value = trimmedText.trim()
@@ -71,6 +75,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#search,
+input[type="submit"] {
+  padding: 8px;
+  font-size: 18px;
+}
 #results {
   margin: 10px 0;
   max-width: 400px;
