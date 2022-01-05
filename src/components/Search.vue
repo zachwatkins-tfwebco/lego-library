@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      Use a kit's number or name found on the front of the box to see if we have it.
+      Enter a kit's number or name to see if we have it!
     </p>
     <SearchForm />
   </div>

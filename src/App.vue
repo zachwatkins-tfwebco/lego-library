@@ -2,8 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/kit-list">List</router-link> |
-      <router-link to="/about-vue">Source</router-link>
+      <router-link to="/kit-list">Full List</router-link> |
+      <router-link to="/about-vue">Code</router-link>
     </div>
     <router-view/>
   </div>
