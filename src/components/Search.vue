@@ -9,36 +9,8 @@
 </template>
 <script>
 // import Vue from 'vue'
-import legoKits from '../data/lego-kits.json'
 import SearchForm from './SearchForm.vue'
 
-function searchKits (event) {
-  event.preventDefault()
-  const $form = document.querySelector('#lego_kit_search_form')
-  // const $results = document.querySelector('#results')
-  const value = $form.querySelector('#search').value.trim()
-  const key = parseInt(value).toString() === value ? 'id' : 'name'
-  const results = []
-  // Find which kits are being looked for.
-  legoKits.forEach(element => {
-    let searchedValue = element[key]
-    if (typeof element[key] === 'number') {
-      searchedValue = searchedValue.toString()
-    }
-    if (searchedValue.indexOf(value) >= 0) {
-      results.push(element)
-    }
-  })
-  // Build the search results output.
-  // $results.innerHTML = ''
-  // if (results.length > 0) {
-  //   const plural = results.length > 1 ? 's' : ''
-  //   const headline = 'Found ' + results.length + ' result' + plural + ':<br />'
-  //   $results.innerHTML += headline
-  // }
-  // console.log(results)
-  // results.items = results
-}
 export default {
   components: {
     SearchForm
@@ -46,16 +18,6 @@ export default {
   name: 'Search',
   props: {
     msg: String
-  },
-  data () {
-    return {
-      items: legoKits
-    }
-  },
-  methods: {
-    onSubmit: function (event) {
-      searchKits(event)
-    }
   }
 }
 </script>
