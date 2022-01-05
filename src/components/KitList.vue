@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <ul id="kit-list">
       <KitListing
-        v-for="item in items"
+        v-for="item in list"
         :key="item.id"
         :listing="item"
       />
@@ -12,21 +12,16 @@
 </template>
 
 <script>
-import legoKits from '../data/lego-kits.json'
 import KitListing from './KitListing.vue'
 
 export default {
   name: 'KitList',
   props: {
-    msg: String
+    msg: String,
+    list: Array
   },
   components: {
     KitListing
-  },
-  data () {
-    return {
-      items: legoKits
-    }
   }
 }
 </script>
