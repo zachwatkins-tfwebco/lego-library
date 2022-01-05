@@ -1,19 +1,26 @@
 <template>
   <div>
-    <form id="lego_kit_search_form" @submit="searchKits">
-      <BaseInputText
-        v-model="newSearchTerms"
-        id="search"
-        placeholder="Search our kits"
-        list="lego-kit-data"
-        @input="searchKits"
-        @keydown.enter="searchKits"
-      />
-      <input type="submit" @click="searchKits" value="Search" />
-      <datalist id="lego-kit-data" v-if="$options.legoJson.length">
-        <option v-for="kit in $options.legoJson" :key="kit.id" v-bind:value="kit.id" />
-        <option v-for="kit in $options.legoJson" :key="kit.name" v-bind:value="kit.name" />
-      </datalist>
+    <form id="lego_kit_search_form" v-on:submit.prevent="searchKits">
+      <div class="message-wrap">
+        <div id="message" v-if="newSearchTerms && 0 === results.length">
+          Kit not found in our library
+        </div>
+        <BaseInputText
+          v-model="newSearchTerms"
+          id="search"
+          placeholder="76146"
+          list="lego-kit-data"
+          v-on:input="searchKits"
+        />
+        <datalist id="lego-kit-data" v-if="$options.legoJson.length">
+          <option v-for="kit in $options.legoJson" :key="kit.id" v-bind:value="kit.id" />
+          <option v-for="kit in $options.legoJson" :key="kit.name" v-bind:value="kit.name" />
+        </datalist>
+        <BaseInputSubmit
+          value="Search"
+          v-on:click.prevent="searchKits"
+        />
+      </div>
     </form>
     <ul id="results" v-if="results.length">
       <KitListing
@@ -22,23 +29,20 @@
         :listing="result"
       />
     </ul>
-    <p v-else>
-      We don't have that one yet!
-    </p>
   </div>
 </template>
 
 <script>
 import legoKits from '../data/lego-kits.json'
 import BaseInputText from './BaseInputText.vue'
-import SearchResult from './SearchResult.vue'
+import BaseInputSubmit from './BaseInputSubmit.vue'
 import KitListing from './KitListing.vue'
 
 export default {
   legoJson: legoKits,
   components: {
     BaseInputText,
-    SearchResult
+    BaseInputSubmit,
     KitListing
   },
   data () {
@@ -49,9 +53,7 @@ export default {
     }
   },
   methods: {
-    searchKits (event) {
-      event.preventDefault()
-      window.alert('yes')
+    searchKits (value) {
       const trimmedText = this.newSearchTerms.trim()
       if (trimmedText) {
         const value = trimmedText.trim()
@@ -69,6 +71,8 @@ export default {
             return false
           }
         })
+      } else {
+        this.results = []
       }
     }
   }
