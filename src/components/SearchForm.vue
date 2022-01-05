@@ -74,12 +74,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-#search,
-input[type="submit"] {
-  padding: 8px;
-  font-size: 18px;
-}
+<style lang="scss" scoped>
 #results {
   margin: 10px 0;
   max-width: 400px;
@@ -88,18 +83,20 @@ input[type="submit"] {
   padding: 10px;
   text-align: left;
 }
-h3 {
-  margin: 20px 0 0;
-}
-ul {
-  text-align: left;
-  margin-left: 0;
-  padding-left: 0;
-}
-li {
-  list-style-type: none;
-}
-a {
-  color: #42b983;
+.message-wrap {
+  display: inline-block;
+  position: relative;
+
+  #message {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #FFF;
+  }
 }
 </style>

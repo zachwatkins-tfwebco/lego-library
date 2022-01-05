@@ -25,9 +25,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
 #kit-list {
   max-width: 400px;
   margin: 10px auto;
@@ -40,24 +37,5 @@ ul {
   text-align: left;
   margin-left: 0;
   padding-left: 0;
-}
-li {
-  display: table-row;
-  list-style-type: none;
-}
-a {
-  color: #42b983;
-}
-.mono {
-  font-family: monospace;
-  font-size: 16px;
-  font-weight: bold;
-}
-.kit-id {
-  display: table-cell;
-  min-width: 80px;
-}
-.kit-name {
-  display: table-cell;
 }
 </style>
